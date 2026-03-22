@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background: #d9d9d9;
+  font-family: "Times New Roman", Times, serif;
+  color: #000;
+}
+
+.site-header {
+  width: 100%;
+  text-align: center;
+  padding-top: 18px;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 116px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.main-nav {
+  margin-top: 34px;
+  margin-bottom: 24px;
+}
+
+.main-nav a {
+  color: #0000ee;
+  font-size: 22px;
+  text-decoration: underline;
+  margin: 0 42px;
+}
+
+main {
+  width: 100%;
+}
+
+.intro-section {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.intro-text {
+  width: 760px;
+  flex: 0 0 760px;
+}
+
+.intro-text p {
+  margin: 0 0 26px 0;
+  font-size: 28px;
+  line-height: 1.18;
+}
+
+.featured-image {
+  width: 620px;
+  flex: 0 0 620px;
+  margin: 6px 0 1px 0;
+  flex-shrink: 1;
+}
+
+.featured-image img {
+  display: block;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border: 2px solid #bdbdbd;
+  
+}
+
+/* Grid area */
+.media-grid {
+  width: 100%;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 61% 39%;
+  grid-template-rows: 330px 330px 330px;
+}
+
+.media-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.media-item video,
+.media-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* row 1 */
+.video-wide {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.image-small-right {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* row 2 */
+.image-left {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.image-right {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* row 3 */
+.image-wide-bottom {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.image-bottom-right {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+@media (max-width: 1200px) {
+  .site-header h1 {
+    font-size: 88px;
+  }
+
+  .intro-section {
+    flex-direction: column;
+  }
+
+  .intro-text,
+  .featured-image {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .featured-image img {
+    height: 420px;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header h1 {
+    font-size: 60px;
+  }
+
+  .main-nav a {
+    margin: 0 14px;
+    font-size: 20px;
+  }
+
+  .intro-section {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .intro-text p {
+    font-size: 22px;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 260px);
+  }
+
+  .video-wide,
+  .image-small-right,
+  .image-left,
+  .image-right,
+  .image-wide-bottom,
+  .image-bottom-right {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
